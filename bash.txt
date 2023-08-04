@@ -1,0 +1,74 @@
+-------------------- Bash Notes --------------------
+
+which $SHELL //finds the path
+
+always start with #!/bin/bash (Linux)
+
+good idea to save all scripts to ~/bin/ directory
+
+if script needs "execute" permission use: chmod +x script.sh
+
+configuration file on Linux: ~/.bashrc on MacOSX: ~/bash_profile
+PATH=~/bin:$PATH
+
+to run a script use ./script.sh
+
+echo "Hello Brett" //prints string to screen
+
+basic bash -----------------------------------------
+
+cd      - change dir
+ls      - list contents of current dir
+mkdir   - create new dir
+touch   - create new file
+rm      - remove file or dir
+cp      - copy file or dir
+mv      - move or rename file or dir
+echo    - print text to terminal
+cat     - concatenate and print contents of file
+grep    - search for a pattern in a file
+chmod   - change permissions of file or dir
+sudo    - run command w/ admin privelages
+df      - display amount of disk space available
+history - show history of executed commands
+ps      - display info about running processes
+
+variables ------------------------------------------
+
+greeting="Hello" //assigns "Hello" to variable greeting
+echo $greeting   //calls the variable
+
+conditionals ---------------------------------------
+
+if [[ condition ]]
+then
+  statement
+elif [[ condition ]]
+then
+  statement
+else
+  default statement
+fi
+
+ex:
+if [ $index -lt 5 ]
+then
+  echo $index
+else
+  echo 5
+fi 
+
+-o  // or                
+-a  // and                ex: if [ $a -gt 60 -a $b -lt 100 ]
+-eq //equal
+-ne //not equal
+-le //less than or equal
+-lt //less than
+-ge //greater than or equal
+-gt //greater than
+-z //is null
+
+note: if comparing strings use quotation marks
+== //equal
+!= //not equal
+if [ "$foo" == "$bar" ] 
