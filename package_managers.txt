@@ -1,0 +1,18 @@
+Red Hat Package Manager (rpm) Notes --------------------------------------
+rpm -i telnet.rpm //install the package telnet.rpm
+rpm -e telnet.rpm //uninstall the package telnet.rpm
+rpm -q telnet.rpm //query the package telnet.rpm
+
+rpm doesn't check for dependencies before installing a package. 
+For example, ansible requires python. rpm allows you to download ansible 
+without python which could cause errors. You might want to use the
+yum package manager which does check for dependencies and installs 
+them.
+
+Yum Package Manager (yum) Notes ------------------------------------------
+yum repolist                       //list of repositories
+yum list                           //lists installed or available packages
+yum remove                         //removes a package
+yum --showduplicates list ansible  //shows all versions of ansible 
+yum install ansible-2.4.2.0        //installs specific version with a hyphen
+
