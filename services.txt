@@ -1,0 +1,36 @@
+Services in linux help you configure software to run in the background 
+and make sure they stay running and run automatically when servers are 
+rebooted.
+
+to run a service, use the service start command
+service httpd start //start httpd service (apache web server)
+  or
+systemctl start httpd //systemctl and service command serve the same purpose
+systemctl stop httpd //stop the service
+systemctl status httpd //check the status
+systemctl enable httpd //configure httpd to to start at startup
+systemctl disable httpd //configure httpd to not run at startup
+systemctl cat app.service //show the file. shortcut for 'cat /usr/lib/systemd/system/app.service'
+
+curl http://localhost:5000 //tests web server running on localhost port 5000
+
+systemctl manages systemd services. So how do we configure our program as a systemd service?
+Add a service file to the dir /etc/systemd/system. Name it what you want it to be called such as my_app.service
+ex my_app.service
+    1 - [Unit]
+    2 - Description=My python web application
+    3 - [Service]
+    4 - ExecStart=/usr/bin/python3 /opt/code/my_app
+    5 - ExecStartPre=/opt/code/configure_db.sh //run shell script before ExecStart
+    6 - ExecStartPost=/opt/code/email_status.sh //run shell script after ExecStart
+    7 - Restart=always //app auto restarts if crashes
+    8 - 
+    9 - [Install]
+    10 - WantedBy=multi-user.target //configure service to run after multi-user.target when server is booting
+    ? - //end of file
+
+  now run 'systemctl daemon reload'
+  then run 'systemctl start my_app'
+
+    
+
