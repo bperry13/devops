@@ -1,0 +1,16 @@
+Networking Notes ----------------------------------
+
+//these commands only valid until a restart, for permanent
+//changes in etc/network_interfaces file 
+ip link //list and modify interfaces on the host
+ip addr //see ip addresses assigned to interfaces
+ip addr add 192.168.1.10/24 dev eth0 //set ip addresses on the interfaces
+
+
+ping 192.168.1.0 //looks for a connection to that ip addr
+route //display the kernel ip routing table
+ip route add 192.168.2.0/24 via 192.168.1.1 //
+ip route add default via 192.168.1.1 
+cat /proc/sys/net/ipv4/ip_forward //if set to 0 then not forwarding, if set 1 then forwarding
+echo 1 > /proc/sys/net/ipv4/ip_forward //changes value to 1 to allow port forwarding
+
