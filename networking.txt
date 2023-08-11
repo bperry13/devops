@@ -1,5 +1,9 @@
 Networking Notes ----------------------------------
 
+ping
+ssh
+curl
+
 //these commands only valid until a restart, for permanent
 //changes in etc/network_interfaces file 
 ip link //list and modify interfaces on the host
@@ -14,3 +18,15 @@ ip route add default via 192.168.1.1
 cat /proc/sys/net/ipv4/ip_forward //if set to 0 then not forwarding, if set 1 then forwarding
 echo 1 > /proc/sys/net/ipv4/ip_forward //changes value to 1 to allow port forwarding
 
+DNS Notes ------------------------------------------
+set a name for the ip address locally:
+add the line '127.0.0.1  dns_name' to the /etc/hosts file 
+
+point to DNS server which tracks all DNS on a network:
+add the line 'nameserver  192.168.1.100' to the file /etc/resolv.conf  
+
+you can set the order of DNS in /etc/nsswitch.conf with a 0 or 1
+
+terminal commands:
+nslookup //queries host name from a DNS server. Only queries DNS server, not /etc/hosts/
+dig //similar to nslookup but more details
