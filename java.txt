@@ -1,0 +1,13 @@
+Java Notes ---------------------------
+  1. Develop source code //java file with main method
+  2. Compile //javac MyClass.java
+  3. Run //java MyClass
+  
+  4. Archive //jar cf [insert JAR name] MyClass1.class MyClass2.class ...
+  5. Run Archive //java -jar [insert JAR name].jar
+
+  META-INF.MANIFEST.MF contains information about the files packaged in JAR file
+
+  javadoc -d doc MyClass.java
+  
+
