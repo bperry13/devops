@@ -1,0 +1,37 @@
+Node JS Notes -------------------------------
+
+curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -;sudo yum install -y nodejs
+
+node -v //check version
+node add.js //run a nodejs program named add.js
+
+Node Package Manager ------------------------
+npm -v //check version
+npm search file //search for packages with file in the name or description
+
+installing npm in a directory makes a node_modules directory and package.json file for metadata
+package.json is good for finding dependency errors
+
+node -e "console.log(module.paths)" //list all paths node looks at while importing a package
+
+2 types of modules.. Built-In and External
+
+Built-In -------------------------
+  fs      | to handle file system
+  http    | to host http server
+  os      | to work with the operating system
+  events  | to handle events
+  tls     | to implement TLS and SSL
+  url     | to parse URL strings
+
+    ls /usr/lib/node_modules/npm/node_modules //list the built-in modules
+
+External -------------------------
+  express | Fast, unopinionated, minimalistic web framework
+  react   | to create user interfaces
+  debug   | debug applications
+  async   | to work with asynchronous JS
+  lodash  | to work with arrays, objects, strings, etc.
+
+
+
