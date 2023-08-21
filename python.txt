@@ -1,0 +1,14 @@
+Python Notes ------------------------------
+
+//check version 2 or 3 with commands below
+python2 -V
+python3 -V
+
+sudo yum install python2 //installs latest release of python 2
+sudo yum install python36 //installs python version 3.6
+
+//run python program titled main.py
+python2 main.py 
+python3 main.py
+
+
