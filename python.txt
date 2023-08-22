@@ -11,4 +11,30 @@ sudo yum install python36 //installs python version 3.6
 python2 main.py 
 python3 main.py
 
+//package manager (pip)
+pip2 -V //shows pip version for python 2
+pip3 -V //shows pip version for python 3
+pip -V //shows pip version for current version of python
 
+//install package
+pip install flask
+
+//find package
+pip show flask
+
+//import multiple dependencies by adding them to a txt file then running
+//best practice to use version number of each 
+pip install -r requirements.txt
+
+ex. of requirements.txt
+Flask==0.10.1
+Jinja2==2.7.3
+MarkupSafe==0.23
+
+//upgrade/uninstall packages
+pip install flask --upgrade
+pip uninstall flask
+
+//eggs and wheels
+easy_install install app //makes an egg which is equivalent to a java jar
+pip install app.whl //makes a wheel which requires unpacking before installing
